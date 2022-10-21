@@ -51,9 +51,9 @@ services:
       - ./epgstation/config:/app/config
       - ./epgstation/data:/app/data
       - ./epgstation/logs:/app/logs
-      - /mnt/cache/recordedTmp:/app/recordedTmp
-      - /mnt/nas/recorded:/app/recorded
-      - /mnt/nas/thumbnail:/app/thumbnail
+      - ./epgstation/recordedTmp:/app/recordedTmp
+      - /volume1/video/recorded:/app/recorded
+      - /volume1/video/thumbnail:/app/thumbnail
       - /var/run:/var/run
     privileged: true
     environment:
