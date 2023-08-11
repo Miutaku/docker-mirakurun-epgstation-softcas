@@ -81,8 +81,8 @@ RUN set -x \
 	&& cd /tmp/ \
 	&& git clone https://github.com/k-pi/recdvb.git \
 	&& cd recdvb \
-	&& ./autogen.sh \
-	&& ./configure --enable-b25 \
+	&& bash ./autogen.sh \
+	&& bash ./configure --enable-b25 \
 	&& sed -i '/#include <sys\/msg.h>/d' recpt1core.h \
 	&& sed -i -E 's!(#include <sys/msg.h>)!#undef _GNU_SOURCE\n#undef _BSD_SOURCE\n\1!' recpt1.c \
 	&& sed -i -E 's!(#include <sys/msg.h>)!#undef _GNU_SOURCE\n#undef _BSD_SOURCE\n\1!' recpt1ctl.c \
