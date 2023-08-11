@@ -79,9 +79,8 @@ RUN set -x \
 	\
 	# recdvb
 	&& cd /tmp/ \
-	&& wget http://www13.plala.or.jp/sat/recdvb/recdvb-1.3.1.tgz \
-	&& tar xvzf recdvb-1.3.1.tgz \
-	&& cd recdvb-1.3.1 \
+	&& git clone https://github.com/k-pi/recdvb.git \
+	&& cd recdvb \
 	&& ./autogen.sh \
 	&& ./configure --enable-b25 \
 	&& sed -i '/#include <sys\/msg.h>/d' recpt1core.h \
