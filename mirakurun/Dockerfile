@@ -79,7 +79,7 @@ RUN set -x \
 	\
 	# recdvb
 	&& cd /tmp/ \
-	&& git clone https://github.com/k-pi/recdvb.git \
+	&& git clone https://github.com/Miutaku/recdvb.git \
 	&& cd recdvb \
 	&& bash ./autogen.sh \
 	&& bash ./configure --enable-b25 \
