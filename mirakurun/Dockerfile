@@ -79,11 +79,10 @@ RUN set -x \
 	\
 	# recdvb
 	&& cd /tmp/ \
-	&& wget http://www13.plala.or.jp/sat/recdvb/recdvb-1.3.1.tgz \
-	&& tar xvzf recdvb-1.3.1.tgz \
-	&& cd recdvb-1.3.1 \
-	&& ./autogen.sh \
-	&& ./configure --enable-b25 \
+	&& git clone https://github.com/Miutaku/recdvb.git \
+	&& cd recdvb \
+	&& bash ./autogen.sh \
+	&& bash ./configure --enable-b25 \
 	&& sed -i '/#include <sys\/msg.h>/d' recpt1core.h \
 	&& sed -i -E 's!(#include <sys/msg.h>)!#undef _GNU_SOURCE\n#undef _BSD_SOURCE\n\1!' recpt1.c \
 	&& sed -i -E 's!(#include <sys/msg.h>)!#undef _GNU_SOURCE\n#undef _BSD_SOURCE\n\1!' recpt1ctl.c \

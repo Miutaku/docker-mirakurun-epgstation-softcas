@@ -10,6 +10,12 @@
   command: recdvb --b25 --dev 1 <channel> - -
   isDisabled: false
 
+- name: PX-S1UD-3
+  types:
+    - GR
+  command: recdvb --b25 --dev 2 <channel> - -
+  isDisabled: false
+
 #- name: PX4-S1
 #  types:
 #    - BS
